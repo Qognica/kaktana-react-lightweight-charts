@@ -3,7 +3,7 @@
     "version": "1.0.5",
     "description": "A simple react wrapper for the tradingview lightweight charts module by Qognica Finance. Forked from Kaktana.",
     "main": "dist/qognicafinance-react-lightweight-charts.min.js",
-    "types": "types/qognicafinance-react-lightweight-charts.d.ts",
+    "types": "types/index.d.ts",
     "scripts": {
         "build": "webpack"
     },
