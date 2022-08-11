@@ -2,7 +2,7 @@ var path = require("path");
 
 module.exports = {
     mode: "production",
-    entry: "./src/chart.js",
+    entry: "./src/chart.jsx",
     output: {
         path: path.resolve("dist"),
         filename: "qognicafinance-react-lightweight-charts.min.js",
@@ -11,9 +11,11 @@ module.exports = {
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+            { test: /\.jsx$/, exclude: /node_modules/, loader: "babel-loader" },
+
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader"
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
