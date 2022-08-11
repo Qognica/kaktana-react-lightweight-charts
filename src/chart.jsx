@@ -2,6 +2,7 @@ import React from "react";
 import { createChart } from "lightweight-charts";
 import equal from "fast-deep-equal";
 import { addSeriesFunctions, colors, defaultDarkTheme, lightTheme } from "./util/consts";
+import { usePrevious } from "./util/hooks";
 
 const Chart = (props) => {
     const { candlestickSeries, lineSeries, areaSeries, barSeries, histogramSeries, width, height, options, autoWidth, autoHeight, legend, from, to, onClick, onCrosshairMove, onTimeRangeMove, darkTheme, chartRef } = props;
