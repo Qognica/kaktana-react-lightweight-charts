@@ -174,8 +174,8 @@ const Chart = (props) => {
 
     const handleUpdateChart = () => {
         window.removeEventListener("resize", resizeHandler);
-        const options = darkTheme ? defaultDarkTheme : lightTheme;
-        options = mergeDeep(options, {
+        let userOptions = darkTheme ? defaultDarkTheme : lightTheme;
+        userOptions = mergeDeep(userOptions, {
             width: autoWidth
                 ? chartDiv.current.parentNode.clientWidth
                 : width,
@@ -184,7 +184,7 @@ const Chart = (props) => {
                 : height || 500,
             ...options,
         });
-        chart?.applyOptions(options);
+        chart?.applyOptions(userOptions);
 
         if (legendDiv.current) {
             legendDiv.current.innerHTML = "";
