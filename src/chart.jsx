@@ -50,10 +50,7 @@ const Chart = (props) => {
                 unsubscribeEvents(prevProps);
             }
         }
-        
-       else if (prevProps.from !== from || prevProps.to !== to ) {
-            handleTimeRange();
-        }
+       
 
     }, [prevProps]);
 
