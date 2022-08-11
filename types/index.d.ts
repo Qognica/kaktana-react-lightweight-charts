@@ -9,38 +9,60 @@ import {
     BarSeriesPartialOptions,
     HistogramSeriesPartialOptions,
     OhlcData,
-    ChartOptions
+    SeriesMarker,
+    ChartOptions,
+    PriceLineOptions
 } from "lightweight-charts";
 import React, { FC } from "react";
 
 export interface ICandlestickSeries {
-    id: string;
+    id?: string;
     data: OhlcData[];
-    options: CandlestickSeriesPartialOptions;
+    options?: Partial<CandlestickSeriesPartialOptions>;
+    linearInterpolation?: number;
+    legend?: string;
+    markers?: SeriesMarker[];
+    priceLines?: PriceLineOptions[];
 }
 
 export interface ILineSeries {
-    id: string;
+    id?: string;
     data: SingleValueData[];
-    options: LineSeriesPartialOptions;
+    options?: Partial<LineSeriesPartialOptions>;
+    linearInterpolation?: number;
+    legend?: string;
+    markers?: SeriesMarker[];
+    priceLines?: PriceLineOptions[];
 }
 
 export interface IAreaSeries {
-    id: string;
+    id?: string;
     data: SingleValueData[];
-    options: AreaSeriesPartialOptions;
+    options?: Partial<AreaSeriesPartialOptions>;
+    linearInterpolation?: number;
+    legend?: string;
+    markers?: SeriesMarker[];
+    priceLines?: PriceLineOptions[];
 }
 
 export interface IBarSeries {
-    id: string;
+    id?: string;
     data: SingleValueData[];
-    options: BarSeriesPartialOptions;
+    options?: Partial<BarSeriesPartialOptions>;
+    linearInterpolation?: number;
+    legend?: string;
+    markers?: SeriesMarker[];
+    priceLines?: PriceLineOptions[];
 }
 
 export interface IHistogramSeries {
-    id: string;
+    id?: string;
     data: SingleValueData[];
-    options: HistogramSeriesPartialOptions;
+    options?: HistogramSeriesPartialOptions;
+    linearInterpolation?: number;
+    legend?: string;
+    markers?: SeriesMarker[];
+    priceLines?: PriceLineOptions[];
 }
 
 export interface IChart extends React.HTMLProps<FC> {
