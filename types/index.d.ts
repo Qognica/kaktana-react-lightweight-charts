@@ -65,6 +65,10 @@ export interface IHistogramSeries {
     priceLines?: PriceLineOptions[];
 }
 
+type DeepPartial<T> = {
+    [P in keyof T]?: DeepPartial<T[P]>;
+};
+
 export interface IChart extends React.HTMLProps<FC> {
     candlestickSeries?: Array<ICandlestickSeries>;
     lineSeries?: Array<ILineSeries>;
@@ -73,7 +77,7 @@ export interface IChart extends React.HTMLProps<FC> {
     histogramSeries?: Array<IHistogramSeries>;
     width?: number;
     height?: number;
-    options?: Partial<ChartOptions>;
+    options?: DeepPartial<ChartOptions>;
     autoWidth?: boolean;
     autoHeight?: boolean;
     legend?: string;
