@@ -177,15 +177,7 @@ const Chart = (props) => {
     const handleUpdateChart = () => {
         window.removeEventListener("resize", resizeHandler);
         let userOptions = darkTheme ? defaultDarkTheme : lightTheme;
-        userOptions = mergeDeep(userOptions, {
-            width: autoWidth
-                ? chartDiv.current.parentNode.clientWidth
-                : width,
-            height: autoHeight
-                ? chartDiv.current.parentNode.clientHeight
-                : height || 500,
-            ...options,
-        });
+        
 
         if (legendDiv.current) {
             legendDiv.current.innerHTML = "";
