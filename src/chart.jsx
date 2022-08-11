@@ -51,31 +51,7 @@ const Chart = (props) => {
             }
         }
         
-        if (
-            !equal(
-                [
-                    prevProps.options,
-                    prevProps.darkTheme,
-                    prevProps.candlestickSeries,
-                    prevProps.lineSeries,
-                    prevProps.areaSeries,
-                    prevProps.barSeries,
-                    prevProps.histogramSeries,
-                ],
-                [
-                    options,
-                    darkTheme,
-                    candlestickSeries,
-                    lineSeries,
-                    areaSeries,
-                    barSeries,
-                    histogramSeries,
-                ]
-            )
-        ) {
-            removeSeries();
-            handleUpdateChart();
-        } else if (prevProps.from !== from || prevProps.to !== to ) {
+       else if (prevProps.from !== from || prevProps.to !== to ) {
             handleTimeRange();
         }
 
