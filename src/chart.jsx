@@ -120,30 +120,33 @@ const Chart = (props) => {
     };
 
     const handleSeries = () => {
+        let newSeries = [];
+
         candlestickSeries &&
             candlestickSeries.forEach((serie) => {
-                setSeries([...series, addSeries(serie, "candlestick")]);
+                newSeries.push(addSeries(serie, "candlestick"));
             });
-
+            
         lineSeries &&
             lineSeries.forEach((serie) => {
-                setSeries([...series, addSeries(serie, "line")]);
+                newSeries.push(addSeries(serie, "line"));
             });
 
         areaSeries &&
             areaSeries.forEach((serie) => {
-                setSeries([...series, addSeries(serie, "area")]);
+                newSeries.push(addSeries(serie, "area"));
             });
 
         barSeries &&
             barSeries.forEach((serie) => {
-                setSeries([...series, addSeries(serie, "bar")]);
+                newSeries.push(addSeries(serie, "bar"));
             });
 
         histogramSeries &&
             histogramSeries.forEach((serie) => {
-                setSeries([...series, addSeries(serie, "histogram")]);
+                newSeries.push(addSeries(serie, "histogram"));
             });
+        setSeries([...series, ...newSeries]);
     };
 
     /**
