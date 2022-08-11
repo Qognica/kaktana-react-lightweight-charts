@@ -26,5 +26,5 @@ export interface IChart extends React.HTMLProps<FC> {
 }
 
 import Chart from "../src";
-export default Chart as IChart;
+export default Chart as React.FC<IChart>;
 export * from "lightweight-charts";
