@@ -18,7 +18,7 @@ import React, { FC } from "react";
 export interface ICandlestickSeries {
     id?: string;
     data: OhlcData[];
-    options?: Partial<CandlestickSeriesPartialOptions>;
+    options?: CandlestickSeriesPartialOptions;
     linearInterpolation?: number;
     legend?: string;
     markers?: SeriesMarker[];
@@ -28,7 +28,7 @@ export interface ICandlestickSeries {
 export interface ILineSeries {
     id?: string;
     data: SingleValueData[];
-    options?: Partial<LineSeriesPartialOptions>;
+    options?: LineSeriesPartialOptions;
     linearInterpolation?: number;
     legend?: string;
     markers?: SeriesMarker[];
@@ -38,7 +38,7 @@ export interface ILineSeries {
 export interface IAreaSeries {
     id?: string;
     data: SingleValueData[];
-    options?: Partial<AreaSeriesPartialOptions>;
+    options?: AreaSeriesPartialOptions;
     linearInterpolation?: number;
     legend?: string;
     markers?: SeriesMarker[];
@@ -48,7 +48,7 @@ export interface IAreaSeries {
 export interface IBarSeries {
     id?: string;
     data: SingleValueData[];
-    options?: Partial<BarSeriesPartialOptions>;
+    options?: BarSeriesPartialOptions;
     linearInterpolation?: number;
     legend?: string;
     markers?: SeriesMarker[];
@@ -73,7 +73,7 @@ export interface IChart extends React.HTMLProps<FC> {
     histogramSeries?: Array<IHistogramSeries>;
     width?: number;
     height?: number;
-    options?: ChartOptions;
+    options?: Partial<ChartOptions>;
     autoWidth?: boolean;
     autoHeight?: boolean;
     legend?: string;
