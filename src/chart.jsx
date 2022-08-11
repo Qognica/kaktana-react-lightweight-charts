@@ -186,7 +186,6 @@ const Chart = (props) => {
                 : height || 500,
             ...options,
         });
-        chart?.applyOptions(userOptions);
 
         if (legendDiv.current) {
             legendDiv.current.innerHTML = "";
