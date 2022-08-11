@@ -17,14 +17,13 @@ const Chart = (props) => {
     const legendDiv = React.createRef();
 
     React.useEffect(() => {
-        if (!chart) {
-            const newChart = createChart(chartDiv.current)
-            setChart(newChart);
-            handleUpdateChart();
-            resizeHandler();
-            chartRef?.(newChart);
-        }
-    }, [chart, chartRef]);
+        if (chart) return;
+        //const newChart = createChart(chartDiv.current)
+        setChart(createChart(chartDiv.current))
+        handleUpdateChart();
+        resizeHandler();
+        //chartRef?.(newChart);
+    }, [chart]);
 
     React.useEffect(() => {
         setColor(darkTheme
@@ -126,7 +125,7 @@ const Chart = (props) => {
             candlestickSeries.forEach((serie) => {
                 newSeries.push(addSeries(serie, "candlestick"));
             });
-            
+
         lineSeries &&
             lineSeries.forEach((serie) => {
                 newSeries.push(addSeries(serie, "line"));
@@ -146,6 +145,7 @@ const Chart = (props) => {
             histogramSeries.forEach((serie) => {
                 newSeries.push(addSeries(serie, "histogram"));
             });
+        console.log(newSeries);
         setSeries([...series, ...newSeries]);
     };
 
@@ -158,7 +158,7 @@ const Chart = (props) => {
             autoWidth &&
             chartDiv.current &&
             chartDiv.current.parentNode.clientWidth;
-        let newHeight =
+        const newHeight =
             autoHeight && chartDiv.current
                 ? chartDiv.current.parentNode.clientHeight
                 : height || 500;
