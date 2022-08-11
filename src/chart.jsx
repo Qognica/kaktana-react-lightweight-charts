@@ -145,7 +145,6 @@ const Chart = (props) => {
             histogramSeries.forEach((serie) => {
                 newSeries.push(addSeries(serie, "histogram"));
             });
-        console.log(newSeries);
         setSeries([...series, ...newSeries]);
     };
 
