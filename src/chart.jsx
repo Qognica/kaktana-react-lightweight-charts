@@ -88,7 +88,6 @@ const Chart = (props) => {
     };
 
     const addSeries = (serie, type) => {
-        if(!chart) return;
         const func = addSeriesFunctions[type];
         const color =
             (serie.options && serie.options.color) ||
@@ -119,6 +118,7 @@ const Chart = (props) => {
     };
 
     const handleSeries = () => {
+        if(!chart) return;
         let newSeries = [];
 
         candlestickSeries &&
