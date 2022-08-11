@@ -18,10 +18,11 @@ const Chart = (props) => {
 
     React.useEffect(() => {
         if (!chart) {
-            setChart(createChart(chartDiv.current));
+            const newChart = createChart(chartDiv.current)
+            setChart(newChart);
             handleUpdateChart();
             resizeHandler();
-            chartRef?.(chart);
+            chartRef?.(newChart);
         }
     }, [chart, chartRef]);
 
@@ -90,6 +91,7 @@ const Chart = (props) => {
     };
 
     const addSeries = (serie, type) => {
+        if(!chart) return;
         const func = addSeriesFunctions[type];
         const color =
             (serie.options && serie.options.color) ||
@@ -207,8 +209,8 @@ const Chart = (props) => {
 
     const handleEvents = () => {
         onClick && chart?.subscribeClick(onClick);
-        onCrosshairMove && chart.subscribeCrosshairMove(onCrosshairMove);
-        onTimeRangeMove && chart.timeScale().subscribeVisibleTimeRangeChange(onTimeRangeMove);
+        onCrosshairMove && chart?.subscribeCrosshairMove(onCrosshairMove);
+        onTimeRangeMove && chart?.timeScale().subscribeVisibleTimeRangeChange(onTimeRangeMove);
 
         // handle legend dynamical change
         chart?.subscribeCrosshairMove(handleLegends);
