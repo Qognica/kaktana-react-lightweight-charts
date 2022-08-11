@@ -1,7 +1,7 @@
 import React from "react";
 import { createChart } from "lightweight-charts";
 import equal from "fast-deep-equal";
-import { addSeriesFunctions, colors, defaultDarkTheme, lightTheme } from "./consts";
+import { addSeriesFunctions, colors, defaultDarkTheme, lightTheme } from "./util/consts";
 
 const Chart = (props) => {
     const { candlestickSeries, lineSeries, areaSeries, barSeries, histogramSeries, width, height, options, autoWidth, autoHeight, legend, from, to, onClick, onCrosshairMove, onTimeRangeMove, darkTheme, chartRef } = props;
@@ -300,3 +300,4 @@ const Chart = (props) => {
 }
 
 export default Chart;
+export * from "lightweight-charts";
