@@ -7,7 +7,6 @@ const Chart = (props) => {
 
     const prevProps = usePrevious(props);
     const [chart, setChart] = React.useState(null);
-    const [color, setColor] = React.useState(lightTheme.layout.textColor);
     const chartDiv = React.createRef();
     const legendDiv = React.createRef();
 
@@ -46,7 +45,6 @@ const Chart = (props) => {
                 style={{
                     position: "absolute",
                     zIndex: 2,
-                    color,
                     padding: 10,
                 }}
             />
