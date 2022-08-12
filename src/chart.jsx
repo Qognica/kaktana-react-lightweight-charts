@@ -18,10 +18,10 @@ const Chart = (props) => {
 
     React.useEffect(() => {
         if (chart) return;
-     /*    const newChart = createChart(chartDiv.current)
+       const newChart = createChart(chartDiv.current)
         setChart(newChart)
         chartRef?.(newChart);
-         */
+         
     }, [chart]);
   /*   React.useEffect(() => {
         if (!chart) return;
