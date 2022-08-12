@@ -18,4 +18,3 @@ const Chart = (props) => {
 }
 
 export default Chart;
-export * from "lightweight-charts";
