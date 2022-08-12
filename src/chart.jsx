@@ -10,28 +10,6 @@ const Chart = (props) => {
     const chartDiv = React.createRef();
     const legendDiv = React.createRef();
 
-    React.useEffect(() => {
-        if (chart) return;
-        const newChart = createChart(chartDiv.current)
-        const ls = newChart.addLineSeries();
-
-         ls.setData([
-    { time: '2019-04-11', value: 80.01 },
-    { time: '2019-04-12', value: 96.63 },
-    { time: '2019-04-13', value: 76.64 },
-    { time: '2019-04-14', value: 81.89 },
-    { time: '2019-04-15', value: 74.43 },
-    { time: '2019-04-16', value: 80.01 },
-    { time: '2019-04-17', value: 96.63 },
-    { time: '2019-04-18', value: 76.64 },
-    { time: '2019-04-19', value: 81.89 },
-    { time: '2019-04-20', value: 74.43 },
-        ]);
-        setChart(newChart)
-        chartRef?.(newChart);
-         
-    }, [chart]);
-
 
     return (
         <div ref={chartDiv} style={{ position: "relative" }}>
