@@ -31,12 +31,7 @@ const Chart = (props) => {
         chartRef?.(newChart);
          
     }, [chart]);
-   React.useEffect(() => {
-        if (!chart) return;
-        if(chartRef.current){
-       
-            }
-    }, [chartRef.current]); 
+
 
     return (
         <div ref={chartDiv} style={{ position: "relative" }}>
