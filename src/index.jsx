@@ -5,7 +5,7 @@ import { addSeriesFunctions, colors, defaultDarkTheme, lightTheme } from "./util
 import usePrevious from "./util/hooks/usePrevious";
 import { mergeDeep } from "./util/helpers";
 
-const Chart = (props) => {
+export const Chart = (props) => {
     const { candlestickSeries, lineSeries, areaSeries, barSeries, histogramSeries, width, height, options, autoWidth, autoHeight, legend, from, to, onClick, onCrosshairMove, onTimeRangeMove, darkTheme, chartRef } = props;
 
     const prevProps = usePrevious(props);
@@ -303,5 +303,4 @@ const Chart = (props) => {
     );
 }
 
-export default Chart;
 export * from "lightweight-charts";
