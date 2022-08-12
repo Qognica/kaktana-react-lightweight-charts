@@ -18,14 +18,15 @@ const Chart = (props) => {
 
     React.useEffect(() => {
         if (chart) return;
-        const newChart = createChart(chartDiv.current)
+     /*    const newChart = createChart(chartDiv.current)
         setChart(newChart)
         chartRef?.(newChart);
-        
+         */
     }, [chart]);
-    React.useEffect(() => {
+  /*   React.useEffect(() => {
         if (!chart) return;
-        const ls = chartRef.current?.addLineSeries();
+        if(chartRef.current){
+        const ls = chartRef?.current?.addLineSeries();
         ls.setData([
     { time: '2019-04-11', value: 80.01 },
     { time: '2019-04-12', value: 96.63 },
@@ -37,8 +38,9 @@ const Chart = (props) => {
     { time: '2019-04-18', value: 76.64 },
     { time: '2019-04-19', value: 81.89 },
     { time: '2019-04-20', value: 74.43 },
-]);
-    }, [chartRef.current]);
+        ]);
+            }
+    }, [chartRef.current]); */
 
     return (
         <div ref={chartDiv} style={{ position: "relative" }}>
