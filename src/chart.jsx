@@ -1,6 +1,6 @@
 import React from "react";
 import { createChart } from "lightweight-charts";
-import equal from "fast-deep-equal";
+import { equal } from "fast-deep-equal";
 import { addSeriesFunctions, colors, defaultDarkTheme, lightTheme } from "./util/consts";
 import usePrevious from "./util/hooks/usePrevious";
 import { mergeDeep } from "./util/helpers";
