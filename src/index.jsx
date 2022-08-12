@@ -23,7 +23,7 @@ const Chart = (props) => {
         handleUpdateChart();
         resizeHandler();
         chartRef?.(newChart);
-    }, [chart]);
+    }, []);
 
     React.useEffect(() => {
         setColor(darkTheme
