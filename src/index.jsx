@@ -82,6 +82,10 @@ const Chart = (props) => {
      * Series
      */
     const removeSeries = () => {
+        console.log(series)
+        series.forEach((serie) => {
+            console.log(serie)
+        });
         series.forEach((serie) => serie ? chart?.removeSeries(serie) : null);
         setSeries([]);
     };
