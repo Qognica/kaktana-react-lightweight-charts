@@ -2,7 +2,7 @@ var path = require("path");
 
 module.exports = {
     mode: "production",
-    entry: "./src/chart.jsx",
+    entry: "./src/index.jsx",
     output: {
         path: path.resolve("dist"),
         filename: "qognicafinance-react-lightweight-charts.min.js",
