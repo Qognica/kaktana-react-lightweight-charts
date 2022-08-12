@@ -82,13 +82,7 @@ const Chart = (props) => {
      * Series
      */
     const removeSeries = () => {
-        console.log(series)
-        series.forEach((serie) => {
-            console.log(serie)
-        });
         series.forEach((serie) => serie ? chart?.removeSeries(serie) : null);
-        console.log("removed now length is!")
-        console.log(series.length)
         setSeries([]);
     };
 
@@ -150,7 +144,7 @@ const Chart = (props) => {
             histogramSeries.forEach((serie) => {
                 newSeries.push(addSeries(serie, "histogram"));
             });
-        setSeries([...series, ...newSeries]);
+        setSeries(newSeries);
     };
 
     /**
