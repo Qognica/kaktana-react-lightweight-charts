@@ -119,6 +119,10 @@ class ChartWrapper extends React.Component {
             this.handleTimeRange();
     }
 
+    componentWillUnmount() {
+        this.removeSeries();
+    }
+
     resizeHandler = () => {
         let width =
             this.props.autoWidth &&
